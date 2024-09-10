@@ -1,0 +1,129 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  font-family: "Heebo", sans-serif;
+}
+html,
+body {
+  scroll-behavior: smooth;
+}
+header {
+  nav {
+    a {
+      display: block;
+      font-weight: 500;
+      position: relative;
+      &:not(.agenda):after {
+        transition: all 0.1s ease-in-out;
+        content: "";
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+        width: 0;
+        @apply border-b-2 bg-main-bg-dark;
+      }
+      &:not(.agenda):hover:after {
+        content: "";
+        width: 100%;
+        opacity: 1;
+      }
+      &.agenda {
+        @apply py-1 px-3  rounded-full bg-main-bg-dark text-white flex items-center gap-2 transition-all duration-75;
+        &:hover {
+          @apply bg-main-bg-medium transition-all duration-75;
+        }
+      }
+    }
+  }
+}
+
+strong {
+  color: inherit;
+}
+
+.text-white p,
+.text-white p strong {
+  color: white;
+}
+.equipo-trabajo {
+  .active {
+    .arrow {
+      @apply !opacity-100 mt-2;
+    }
+  }
+}
+.main-menu {
+  .movil {
+    display: none;
+  }
+}
+
+.contacto {
+  background-image: url("../img/bg-contacto.jpg");
+  background-size: çover;
+  background-position: center;
+}
+.swiper-button-next,
+.swiper-button-prev {
+  position: relative;
+  inset: inherit;
+  height: auto;
+  margin: 0;
+}
+.swiper-button-next:after,
+.swiper-button-prev:after {
+  font-size: 1.5em;
+  color: #fff;
+}
+@media (min-width: 768px) {
+}
+
+@media (max-width: 768px) {
+  .equipo-trabajo {
+    .active {
+      .arrow {
+        @apply mt-0;
+      }
+      .descripcion {
+        @apply !block;
+      }
+    }
+  }
+
+  .main-menu {
+    .movil {
+      display: flex;
+    }
+    ul {
+      display: none;
+      @apply bg-main-bg-dark shadow-xl rounded-b-xl overflow-hidden;
+      position: absolute;
+      z-index: 10;
+      right: 5%;
+      left: 6%;
+      top: 100%;
+      li {
+        @apply border-b border-b-main-bg-medium last:border-b-0;
+      }
+      a {
+        display: block;
+        @apply p-4;
+        &:hover {
+          @apply transition-all duration-100 bg-main-bg-medium;
+
+          &:after {
+            @apply border-b-0;
+          }
+        }
+        &.agenda {
+          @apply hidden;
+        }
+      }
+      &.active {
+        display: block;
+      }
+    }
+  }
+}
