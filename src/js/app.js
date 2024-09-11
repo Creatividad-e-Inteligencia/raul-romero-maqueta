@@ -75,3 +75,33 @@ $$(".listado-equipo a").forEach((el) => {
     }
   });
 });
+
+// window.addEventListener("load", (event) => {
+//   console.log(MicroModal);
+//   console.log("page is fully loaded");
+//   MicroModal.show("modal-1");
+// });
+
+const boton_ver_servicio = $$(".ver-servicio");
+boton_ver_servicio.forEach((el) => {
+  el.addEventListener("click", (e) => {
+    e.preventDefault();
+    console.log(JSON.parse(e.currentTarget.dataset.servicio));
+    const json = JSON.parse(e.currentTarget.dataset.servicio);
+    actualizarModalServicio(json);
+    Fancybox.show([{ src: "#modal-1", type: "inline" }]);
+  });
+});
+
+function actualizarModalServicio(servicio) {
+  const modal = $("#modal-1");
+
+  const titulo = modal.querySelector(".titulo-modal");
+  titulo.innerHTML = servicio.titulo;
+
+  const imagen = modal.querySelector(".imagen-modal");
+  imagen.innerHTML = `<img src="${servicio.imagen}" alt="${servicio.titulo}" class="h-full w-full object-contain filter brightness-0 invert">`;
+
+  const contenido = modal.querySelector(".contenido-modal");
+  contenido.innerHTML = servicio.descripcion;
+}

@@ -77,7 +77,27 @@ strong {
   font-size: 1.5em;
   color: #fff;
 }
-@media (min-width: 768px) {
+
+.modal {
+  display: none;
+  transition: all 0.3s ease-in-out;
+  opacity: 0;
+  .dialog {
+    transition: all 0.3s ease-in-out;
+    margin-top: 100px;
+    opacity: 0;
+  }
+}
+
+.modal.is-open {
+  display: block;
+  opacity: 1;
+  transition: all 0.3s ease-in-out;
+  .dialog {
+    transition: all 0.3s ease-in-out;
+    margin-top: 0;
+    opacity: 1;
+  }
 }
 
 @media (max-width: 768px) {

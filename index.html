@@ -12,6 +12,9 @@
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css" />
+
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <link rel="stylesheet" href="src/css/main.css">
 
@@ -241,22 +244,37 @@
         <ul class="listado-servicios flex flex-wrap gap-4">
             <li
                 class="hover:bg-cyan-600 transition-all group w-[calc(50%-1rem)] sm:w-[calc(25%-1rem)] border rounded-xl border-cyan-500 p-4 min-h-64 h-full flex flex-col items-center justify-center">
-                <div class="h-20 max-w-40 w-full mb-6">
-                    <img src="src/img/receta.png" alt="RECETA DE ANTEOJOS"
-                        class="h-full w-full object-contain group-hover:filter group-hover:brightness-0 group-hover:invert">
-                </div>
+                <a href="#" class="ver-servicio" data-servicio='{
+                        "imagen": "src/img/receta.png",
+                        "titulo": "RECETA DE ANTEOJOS",
+                        "descripcion": "xxx"
+                      }'>
+                    <div class="h-20 max-w-40 w-full mb-6 mx-auto">
+                        <img src="src/img/receta.png" alt="RECETA DE ANTEOJOS"
+                            class="h-full w-full object-contain group-hover:filter group-hover:brightness-0 group-hover:invert">
+                    </div>
 
-                <p class="text-sm  font-bold  text-main-titulo text-center group-hover:text-white ">RECETA DE ANTEOJOS
-                </p>
+                    <p class="text-sm  font-bold  text-main-titulo text-center group-hover:text-white ">RECETA DE
+                        ANTEOJOS
+                    </p>
+                </a>
             </li>
             <li
                 class="hover:bg-cyan-600 transition-all group w-[calc(50%-1rem)] sm:w-[calc(25%-1rem)] border rounded-xl border-cyan-500 p-4 min-h-64 h-full flex flex-col items-center justify-center">
-                <div class="h-20 max-w-40 w-full mb-6">
-                    <img src="src/img/examen-oftalmologico.png" alt="EXAMEN OFTALMOLÓGICO COMPLETO"
-                        class="h-full w-full object-contain group-hover:filter group-hover:brightness-0 group-hover:invert">
-                </div>
-                <p class="text-sm  font-bold  text-main-titulo text-center group-hover:text-white">EXAMEN OFTALMOLÓGICO
-                    COMPLETO</p>
+                <a href="#" class="ver-servicio" data-servicio='{
+                    "imagen": "src/img/examen-oftalmologico.png",
+                    "titulo": "EXAMEN OFTALMOLÓGICO COMPLETO",
+                    "descripcion": "xxx"
+                  }'>
+                    <div class="h-20 max-w-40 w-full mb-6 mx-auto">
+                        <img src="src/img/examen-oftalmologico.png" alt="EXAMEN OFTALMOLÓGICO COMPLETO"
+                            class="h-full w-full object-contain group-hover:filter group-hover:brightness-0 group-hover:invert">
+                    </div>
+
+                    <p class="text-sm  font-bold  text-main-titulo text-center group-hover:text-white">EXAMEN
+                        OFTALMOLÓGICO
+                        COMPLETO</p>
+                </a>
             </li>
             <li
                 class="hover:bg-cyan-600 transition-all group w-[calc(50%-1rem)] sm:w-[calc(25%-1rem)] border rounded-xl border-cyan-500 p-4 min-h-64 h-full flex flex-col items-center justify-center">
@@ -863,6 +881,30 @@
             </div>
         </div>
     </footer>
+    <div id="modal-1" aria-hidden="true"
+        class="hidden   bg-main-titulo rounded-lg max-w-screen-md w-full p-4 sm:px-10 pt-10 pb-16 relative text-white">
+
+        <div class="">
+            <div class="nombre mb-10 max-w-40 text-center">
+                <div class="h-14 max-w-30 w-full mb-2 mx-auto imagen-modal">
+                    <img src="src/img/examen-oftalmologico.png" alt="EXAMEN OFTALMOLÓGICO COMPLETO"
+                        class="h-full w-full object-contain filter brightness-0 invert">
+                </div>
+                <p class="text-[.6em] font-semibold text-white titulo-modal">EXAMEN OFTALMOLÓGICO COMPLETO</p>
+            </div>
+            <div class="contenido-modal text-left text-white leading-relaxed sm:w-9/12 mx-auto">
+                <p>
+                    <strong>Prueba texto</strong><br>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus
+                    tortor,
+                    dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas
+                    ligula massa, varius a, semper congue, euismod non, mi. Proin porttitor, orci nec nonummy
+                    molestie,
+                </p>
+            </div>
+        </div>
+    </div>
+
 </body>
 
 </html>
