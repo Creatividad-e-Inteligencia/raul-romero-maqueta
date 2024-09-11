@@ -86,7 +86,6 @@ const boton_ver_servicio = $$(".ver-servicio");
 boton_ver_servicio.forEach((el) => {
   el.addEventListener("click", (e) => {
     e.preventDefault();
-    console.log(JSON.parse(e.currentTarget.dataset.servicio));
     const json = JSON.parse(e.currentTarget.dataset.servicio);
     actualizarModalServicio(json);
     Fancybox.show([{ src: "#modal-1", type: "inline" }]);
